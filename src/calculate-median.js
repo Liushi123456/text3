@@ -21,6 +21,7 @@ function calculate_median(arr) {
       newarr[i + 1] = temp;
      }
     }
+  }
    //计算新数组的中位数
     if(newarr.length%2===0){
        result = (newarr[newarr.length/2]+newarr[newarr.length/2+1])/2;
