@@ -7,12 +7,8 @@ function calculate_median(arr) {
        newarr=arr[i];
      }
    }
-   function compare(v1,v2) {
-     return v2 - v1;
-   }
-   newarr=newarr.sort(compare);
-    /*if (newarr.length <= 1) { return newarr; }
-　　var pivotIndex = Math.floor(newarr.length / 2);
+   if (newarr.length <= 1) { return newarr; }
+　var pivotIndex = Math.floor(newarr.length / 2);
 　　var pivot = newarr.splice(pivotIndex, 1)[0];
 　　var left = [];
 　　var right = [];
@@ -23,7 +19,7 @@ function calculate_median(arr) {
 　　　　　　right.push(newarr[i]);
 　　　　}
 　　}
-　　return quickSort(left).concat([pivot], quickSort(right));*/
+　　return quickSort(left).concat([pivot], quickSort(right));
     if(newarr.length%2===0){
        result = (newarr[newarr.length/2]+newarr[newarr.length/2-1])/2;
     }else {
