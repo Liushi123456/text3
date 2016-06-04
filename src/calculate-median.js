@@ -3,27 +3,25 @@ function calculate_median(arr) {
    var newarr=[];
    //取出数组中所有的偶数元素,放在newarr数组中
    for (var i = 0; i < arr.length; i++) {
-     if (i%2===0) {
-        newarr=arr[i];
+     if ((i+1)%2===0) {
+        newarr[i]=arr[i];
      }
    }
   //对newarr数组进行排序
+   var length = newarr.length;
    var i, j, temp;
-   for (j = 0; j < newarr.length-1; j++)
-   {
-    for (i = 0; i < newarr.length-1-j; i++)
-    {
-     if (newarr[i] > newarr[i + 1])
-     {
-      temp = newarr[i];
-      newarr[i] = newarr[i + 1];
-      newarr[i + 1] = temp;
-     }
-    }
-  }
+   for (i = length - 1; i > 0; i--) {
+       for (j = 0; j < i; j++) {
+           if (newarr[j] > newarr[j + 1]) {
+               temp = newarr[j];
+               newarr[j] = newarr[j + 1];
+               newarr[j + 1] = temp;
+           }
+       }
+   }
 
    //计算新数组的中位数
-   var result=((newarr.length%2===0)?newarr[newarr.length/2]:(newarr[newarr.length/2]+newarr[newarr.length/2-1])/2);
+   var result=(newarr.length%2===0)?(newarr[newarr.length/2]+newarr[newarr.length/2-1])/2:newarr[newarr.length/2];
     /*if(newarr.length%2===0){
       var result = (newarr[newarr.length/2]+newarr[newarr.length/2+1])/2;
     }else {
