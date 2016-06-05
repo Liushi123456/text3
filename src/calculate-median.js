@@ -4,14 +4,14 @@ function calculate_median(arr) {
    //取出数组中所有的偶数元素,放在newarr数组中
    for (var i = 0; i < arr.length; i++) {
      if ((i+1)%2===0) {
-        newarr[i]=arr[i];
+        newarr=arr[i];
      }
    }
   //对newarr数组进行排序
    var length = newarr.length;
    var i, j, temp;
-   for (i = length - 1; i > 0; i--) {
-       for (j = 0; j < i; j++) {
+   for (i = 0; i < newarr.length; i++) {
+       for (j = 0; j < newarr.length-i-1; j++) {
            if (newarr[j] > newarr[j + 1]) {
                temp = newarr[j];
                newarr[j] = newarr[j + 1];
